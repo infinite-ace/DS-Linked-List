@@ -54,11 +54,46 @@ public class LinkedList implements LinkedListInterface {
     @Override
     public void update(int idx, int value) {
 
+        int indexCount = 0;
+
+        while( head.next != null && idx > indexCount ) {
+            indexCount ++;
+            head = head.next;
+        }
+
+        //TODO: Not working properly. Cuts the list. Fix.
+        head.setVal(value);
     }
 
     @Override
     public int getByIndex(int idx) {
+        int indexCount = 0;
+
+        Node tempHead = head;
+
+        while(tempHead.next != null) {
+            if (indexCount == idx) {
+                return indexCount;
+            }
+            indexCount ++;
+            tempHead = tempHead.next;
+        }
+
+        System.err.println("Index " + idx + " is out of bounds. Try asking for idx < " + this.calculateSize());
         return 0;
+    }
+
+    private int calculateSize() {
+        int size = 0;
+
+        Node tempHead = head;
+
+        while(tempHead.next != null) {
+            size ++;
+            tempHead = tempHead.next;
+        }
+
+        return size + 1;
     }
 
     @Override
@@ -72,9 +107,12 @@ public class LinkedList implements LinkedListInterface {
         Node temporaryNode = head;
 
         while (temporaryNode != null) {
-            System.out.println(temporaryNode.val);
+            System.out.print(temporaryNode.val + " -> ");
 
             temporaryNode = temporaryNode.next;
         }
+
+        // For the last element
+        System.out.print("null" + "\n");
     }
 }

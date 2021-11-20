@@ -10,4 +10,12 @@ public class Node {
         val = d;
         next = null;
     }
+
+    public void setVal(int value) {
+        this.val = value;
+    }
+
+    public int getVal() {
+        return val;
+    }
 }
