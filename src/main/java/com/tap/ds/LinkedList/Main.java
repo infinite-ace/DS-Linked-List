@@ -22,7 +22,7 @@ public class Main {
         System.out.println("===== Update Result =====");
         System.out.println("Before: ");
         linkedList.printAllValues();
-        linkedList.update(2, 662);
+        linkedList.update(0, 662);
         System.out.println("After: ");
         linkedList.printAllValues();
 

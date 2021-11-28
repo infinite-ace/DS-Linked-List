@@ -4,7 +4,7 @@ public class Node {
 
     int val;
     Node next;
-//    //Node prev;
+    int idx;
 
     Node(int d) {
         val = d;

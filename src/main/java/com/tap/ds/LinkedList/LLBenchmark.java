@@ -13,6 +13,8 @@ public class LLBenchmark {
     @OutputTimeUnit(TimeUnit.NANOSECONDS)
     @Fork(value = 0, warmups = 1)
     public void benchMarkInsertion() {
+        LinkedList myList = new LinkedList();
+        myList.insertion(5);
     }
 
     @Benchmark

@@ -25,7 +25,8 @@ public class LinkedList implements LinkedListInterface {
     @Override
     public void deletion(int val) {
 
-        Node temporaryNode = head, prev = null;
+        Node temporaryNode = head;
+        Node prev = null;
 
         // When head holds the actual value
         if (temporaryNode != null && temporaryNode.val == val) {
@@ -55,14 +56,16 @@ public class LinkedList implements LinkedListInterface {
     public void update(int idx, int value) {
 
         int indexCount = 0;
+        Node headNextUpdated = head;
 
-        while( head.next != null && idx > indexCount ) {
+        while( head.next != null  ) {
+            if ( idx == indexCount ) {
+                headNextUpdated.setVal(value);
+                break;
+            }
+            headNextUpdated = headNextUpdated.next;
             indexCount ++;
-            head = head.next;
         }
-
-        //TODO: Not working properly. Cuts the list. Fix.
-        head.setVal(value);
     }
 
     @Override
