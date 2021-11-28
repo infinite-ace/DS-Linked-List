@@ -16,15 +16,22 @@ public class Main {
         System.out.println("===== Get By Index Result =====");
         System.out.println(linkedList.getByIndex(2));
         System.out.println(linkedList.getByIndex(0));
-        System.out.println(linkedList.getByIndex(4));
-        System.out.println(linkedList.getByIndex(80));
+
+        // Below examples will produce out of bounds error
+//        System.out.println(linkedList.getByIndex(4));
+//        System.out.println(linkedList.getByIndex(80));
 
         System.out.println("===== Update Result =====");
         System.out.println("Before: ");
         linkedList.printAllValues();
-        linkedList.update(0, 662);
+        linkedList.update(1, 662);
         System.out.println("After: ");
         linkedList.printAllValues();
+
+        System.out.println("===== Get Result =====");
+
+        linkedList.get(662);
+
 
 
 

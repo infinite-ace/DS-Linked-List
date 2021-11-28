@@ -76,6 +76,7 @@ public class LinkedList implements LinkedListInterface {
 
         while(tempHead.next != null) {
             if (indexCount == idx) {
+                System.out.println("Value: " + tempHead.val + " At index: " + indexCount);
                 return indexCount;
             }
             indexCount ++;
@@ -101,6 +102,18 @@ public class LinkedList implements LinkedListInterface {
 
     @Override
     public int get(int value) {
+        Node tempHead = head;
+        int indexCount = 0;
+
+        while(tempHead.next != null) {
+            if (tempHead.getVal() == value) {
+                System.out.println("Value: " + tempHead.val + " At index: " + indexCount);
+                return indexCount;
+            }
+            indexCount ++;
+            tempHead = tempHead.next;
+        }
+
         return 0;
     }
 
